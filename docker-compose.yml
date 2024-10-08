@@ -1,0 +1,12 @@
+services:
+  web-fetcher:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    entrypoint: ["python", "main.py"]
+
+  test:
+    build: .
+    command: ["python", "-m", "unittest", "discover", "-s", "tests", "-p", "*.py", "-v"]
+    volumes:
+      - .:/usr/src/app
