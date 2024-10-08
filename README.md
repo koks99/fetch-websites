@@ -29,11 +29,11 @@ Ensure that you have the following installed before proceeding with the setup:
 
 ### Running the Application
 1. You can pass single or multiple URLs separated by space:
->```sudo docker-compose run web_fetcher <URL1> <URL2>```
+>```sudo docker-compose run web-fetcher <URL1> <URL2>```
 2. To fetch metadata like the number of links and images from the website, add the --metadata flag:
->```sudo docker-compose run web_fetcher <URL1> <URL2> --metadata```
+>```sudo docker-compose run web-fetcher <URL1> <URL2> --metadata```
 3. To create a mirror copy of the website locally, add the --mirror flag:
->```sudo docker-compose run web_fetcher <URL1> <URL2> --mirror```
+>```sudo docker-compose run web-fetcher <URL1> <URL2> --mirror```
 4. Both flags can be used simultaneously as well.
 
 ## Misc

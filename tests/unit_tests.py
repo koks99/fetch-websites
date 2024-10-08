@@ -9,9 +9,9 @@ from utils.util import ensure_www
 class TestWebFetcher(unittest.TestCase):
 
     def setUp(self):
-        self.test_url = 'https://example.com'
+        self.test_url = 'https://test.com'
         self.test_html_content = '<html><body><a href="https://link.com"></a><img src="image.jpg"/></body></html>'
-        self.test_dir = 'example.com'
+        self.test_dir = 'test.com'
 
     @patch('main.requests.get')
     def test_save_website_content(self, mock_get):
@@ -24,10 +24,10 @@ class TestWebFetcher(unittest.TestCase):
         main.fetch_website(self.test_url, None, None)
 
         # Check if the file is created
-        self.assertTrue(os.path.exists('example.com.html'))
+        self.assertTrue(os.path.exists('test.com.html'))
 
         # Check file content to ensure correct content was saved
-        with open('example.com.html', 'r') as f:
+        with open('test.com.html', 'r') as f:
             saved_content = f.read()
             self.assertIn('<html><body>', saved_content)
 
@@ -75,8 +75,8 @@ class TestWebFetcher(unittest.TestCase):
 
     # Clean up files after test run
     def tearDown(self):
-        if os.path.exists('example.com.html'):
-            os.remove('example.com.html')
+        if os.path.exists('test.com.html'):
+            os.remove('test.com.html')
         if os.path.exists(self.test_dir):
             os.rmdir(self.test_dir)
 
